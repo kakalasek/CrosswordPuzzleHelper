@@ -3,12 +3,18 @@ package org.example.mainframe;
 import javax.swing.*;
 import java.awt.*;
 
+import static org.example.Utilities.TextHandler.*;
+
 public class Panel extends JPanel {
     JLabel requestLabel;
     JTextField requestField;
     JLabel numOfLettersLabel;
     JTextField numOfLettersField;
     JButton searchButton;
+    JLabel editLabel;
+    JButton addButton;
+    JButton removeButton;
+    JButton alterButton;
     public Panel(){
         this.setPreferredSize(new Dimension(1000, 700));
         this.setLayout(null);
@@ -35,14 +41,22 @@ public class Panel extends JPanel {
 
         searchButton = new JButton("Search");
         searchButton.setBounds(50, 175, 100, 30);
-        searchButton.setFont(searchButton.getFont().deriveFont(Font.BOLD));
         this.add(searchButton);
-    }
 
-    private int getTextHeight(JLabel label){
-        return label.getFontMetrics(label.getFont()).getHeight();
-    }
-    private int getTextWidth(JLabel label){
-        return label.getFontMetrics(label.getFont()).stringWidth(label.getText());
+        editLabel = new JLabel("Alter the database:");
+        editLabel.setBounds(50, 300, getTextWidth(editLabel), getTextHeight(editLabel));
+        this.add(editLabel);
+
+        addButton = new JButton("Add");
+        addButton.setBounds(50, 325, 100, 30);
+        this.add(addButton);
+
+        removeButton = new JButton("Remove");
+        removeButton.setBounds(50,380, 100, 30);
+        this.add(removeButton);
+
+        alterButton = new JButton("Alter");
+        alterButton.setBounds(50, 435, 100, 30);
+        this.add(alterButton);
     }
 }
