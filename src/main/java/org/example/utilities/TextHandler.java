@@ -1,4 +1,4 @@
-package org.example.Utilities;
+package org.example.utilities;
 
 import javax.swing.*;
 
@@ -11,4 +11,5 @@ public class TextHandler {
     public static int getTextWidth(JLabel label){
         return label.getFontMetrics(label.getFont()).stringWidth(label.getText());
     }
+
 }

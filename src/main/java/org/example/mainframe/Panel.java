@@ -1,11 +1,18 @@
 package org.example.mainframe;
 
+import org.example.sideframes.add.AddPanel;
+import org.example.sideframes.alter.AlterPanel;
+import org.example.sideframes.remove.RemovePanel;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import static org.example.Utilities.TextHandler.*;
+import static org.example.utilities.TextHandler.*;
+import static org.example.sideframes.SideFrame.getInstance;
 
-public class Panel extends JPanel {
+public class Panel extends JPanel implements ActionListener {
     JLabel requestLabel;
     JTextField requestField;
     JLabel numOfLettersLabel;
@@ -49,14 +56,28 @@ public class Panel extends JPanel {
 
         addButton = new JButton("Add");
         addButton.setBounds(50, 325, 100, 30);
+        addButton.addActionListener(this);
         this.add(addButton);
 
         removeButton = new JButton("Remove");
         removeButton.setBounds(50,380, 100, 30);
+        removeButton.addActionListener(this);
         this.add(removeButton);
 
         alterButton = new JButton("Alter");
         alterButton.setBounds(50, 435, 100, 30);
+        alterButton.addActionListener(this);
         this.add(alterButton);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent actionEvent){
+        if(actionEvent.getSource() == addButton) {
+            getInstance("Add", new AddPanel());
+        }else if(actionEvent.getSource() == removeButton){
+            getInstance("Remove", new RemovePanel());
+        }else if(actionEvent.getSource() == alterButton){
+            getInstance("Alter", new AlterPanel());
+        }
     }
 }

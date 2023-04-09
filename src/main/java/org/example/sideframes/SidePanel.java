@@ -1,5 +1,7 @@
 package org.example.sideframes;
 
+import org.example.utilities.DatabaseHandler;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -11,4 +13,5 @@ public abstract class SidePanel extends JPanel {
     }
 
     protected abstract void setUp();
+    protected DatabaseHandler databaseHandler = new DatabaseHandler("jdbc:postgresql://localhost:5432/crosswordpuzzle_db", "postgres", "postgres");
 }

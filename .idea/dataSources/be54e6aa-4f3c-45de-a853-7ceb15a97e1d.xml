@@ -3,9 +3,9 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.48">
     <root id="1">
       <DateStyle>dmy</DateStyle>
-      <IntrospectionStateNumber>562</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1196</IntrospectionStateNumber>
       <ServerVersion>12.12</ServerVersion>
-      <StartupTime>1680877480</StartupTime>
+      <StartupTime>1681043183</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -1401,7 +1401,7 @@ true posixrules
 13163||10|C|G
 13163||-9223372036854775808|U|G
 13163||10|U|G</Grants>
-      <IntrospectionStateNumber>562</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1196</IntrospectionStateNumber>
       <ObjectId>24609</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4628,44 +4628,44 @@ true posixrules
     <schema id="246" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>562</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1196</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>275</StateNumber>
       <OwnerName>postgres</OwnerName>
     </schema>
     <table id="247" parent="246" name="central">
-      <ObjectId>24610</ObjectId>
-      <StateNumber>561</StateNumber>
+      <ObjectId>24615</ObjectId>
+      <StateNumber>569</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <column id="248" parent="247" name="legenda">
+    <column id="248" parent="247" name="legend">
       <DasType>varchar(200)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>561</StateNumber>
+      <StateNumber>1195</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="249" parent="247" name="pocet_znaku">
-      <DasType>integer|0s</DasType>
+    <column id="249" parent="247" name="number_of_letters">
+      <DasType>varchar(10)|0s</DasType>
       <Position>2</Position>
-      <StateNumber>561</StateNumber>
-      <TypeId>23</TypeId>
+      <StateNumber>569</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
-    <column id="250" parent="247" name="vyraz">
+    <column id="250" parent="247" name="word">
       <DasType>varchar(200)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>561</StateNumber>
+      <StateNumber>1195</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="251" parent="247" name="central_pkey">
-      <ColNames>legenda
-vyraz</ColNames>
+      <ColNames>legend
+word</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>24613</ObjectId>
+      <ObjectId>24619</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>561</StateNumber>
+      <StateNumber>1195</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationIds>100
@@ -4677,10 +4677,10 @@ pg_catalog</CollationParentNames>
     </index>
     <key id="252" parent="247" name="central_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>24614</ObjectId>
+      <ObjectId>24620</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>561</StateNumber>
-      <UnderlyingIndexId>24613</UnderlyingIndexId>
+      <StateNumber>1195</StateNumber>
+      <UnderlyingIndexId>24619</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>

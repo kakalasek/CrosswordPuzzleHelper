@@ -1,13 +1,18 @@
-package org.example.sideframes.addframe;
+package org.example.sideframes.add;
 
 import org.example.sideframes.SidePanel;
 
 import javax.swing.*;
-import java.awt.*;
 
-import static org.example.Utilities.TextHandler.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
-public class AddPanel extends SidePanel {
+import static org.example.utilities.TextHandler.*;
+import static org.example.queries.InsertQueries.*;
+import static org.example.utilities.FileHandler.*;
+
+public class AddPanel extends SidePanel implements ActionListener {
     JLabel explainLabel;
     JLabel legendLabel;
     JTextField legendField;
@@ -51,6 +56,7 @@ public class AddPanel extends SidePanel {
 
         addButton = new JButton("Add");
         addButton.setBounds(10, 260, 100, 30);
+        addButton.addActionListener(this);
         this.add(addButton);
 
         fileLabel = new JLabel("Enter a path to a csv file:");
@@ -63,6 +69,19 @@ public class AddPanel extends SidePanel {
 
         fileAddButton = new JButton("Add from file");
         fileAddButton.setBounds(250, 140, 150, 30);
+        fileAddButton.addActionListener(this);
         this.add(fileAddButton);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent actionEvent) {
+        if(actionEvent.getSource() == addButton){
+            databaseHandler.execute(insertOne(legendField.getText(), numOfLettersField.getText(), wordField.getText()));
+        }else if(actionEvent.getSource() == fileAddButton){
+            ArrayList<String[]> valueSet = CSV_to_array(fileField.getText());
+            for(String[] values : valueSet){
+                databaseHandler.execute(insertOne(values[0], values[1], values[2]));
+            }
+        }
     }
 }

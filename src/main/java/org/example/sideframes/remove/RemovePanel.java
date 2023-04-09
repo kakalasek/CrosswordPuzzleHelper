@@ -1,12 +1,16 @@
-package org.example.sideframes.removeframe;
+package org.example.sideframes.remove;
 
 import org.example.sideframes.SidePanel;
 
 import javax.swing.*;
 
-import static org.example.Utilities.TextHandler.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class RemovePanel extends SidePanel {
+import static org.example.utilities.TextHandler.*;
+import static org.example.queries.RemoveQueries.*;
+
+public class RemovePanel extends SidePanel implements ActionListener {
     JLabel explainLabel;
     JLabel legendLabel;
     JTextField legendField;
@@ -37,6 +41,14 @@ public class RemovePanel extends SidePanel {
 
         removeButton = new JButton("Remove");
         removeButton.setBounds(10, 120, 100,  30);
+        removeButton.addActionListener(this);
         this.add(removeButton);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent actionEvent) {
+        if(actionEvent.getSource() == removeButton){
+            databaseHandler.execute(removeOne(legendField.getText(), wordField.getText()));
+        }
     }
 }

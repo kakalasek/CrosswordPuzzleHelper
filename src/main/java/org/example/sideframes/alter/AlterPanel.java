@@ -1,12 +1,16 @@
-package org.example.sideframes.alterframe;
+package org.example.sideframes.alter;
 
 import org.example.sideframes.SidePanel;
 
 import javax.swing.*;
 
-import static org.example.Utilities.TextHandler.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class AlterPanel extends SidePanel {
+import static org.example.utilities.TextHandler.*;
+import static org.example.queries.AlterQueries.*;
+
+public class AlterPanel extends SidePanel implements ActionListener {
     JLabel explainLabel;
     JLabel legendLabel_exist;
     JTextField legendField_exist;
@@ -57,6 +61,14 @@ public class AlterPanel extends SidePanel {
 
         alterButton = new JButton("Alter");
         alterButton.setBounds(10, 260, 100, 30);
+        alterButton.addActionListener(this);
         this.add(alterButton);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent actionEvent) {
+        if(actionEvent.getSource() == alterButton){
+            databaseHandler.execute(alterOne(legendField_exist.getText(), wordField_exist.getText(), legendField_new.getText(), wordField_new.getText()));
+        }
     }
 }
