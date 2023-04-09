@@ -1,6 +1,7 @@
 package org.example.utilities;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class DatabaseHandler{
     private Connection connection;
@@ -14,9 +15,16 @@ public class DatabaseHandler{
         }
     }
 
-    public ResultSet executeAndReturn(String query){
+    public ArrayList<String> executeAndReturn(String query){
         try {
-            return statement.executeQuery(query);
+            ArrayList<String> output = new ArrayList<String>();
+            ResultSet queryResults = statement.executeQuery(query);
+
+            while(queryResults.next()){
+                output.add(queryResults.getString("word"));
+            }
+
+            return output;
         }catch (SQLException e){
             e.printStackTrace();
             return null;

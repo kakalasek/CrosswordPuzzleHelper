@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a93f8654-cf59-4608-af3b-3638790c75ee" name="Changes" comment="Basic queries added, git repair">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/mainframe/ResultPane.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/queries/SearchQueries.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/mainframe/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/mainframe/Panel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utilities/DatabaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utilities/DatabaseHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +91,8 @@
       <workItem from="1681043297616" duration="5624000" />
       <workItem from="1681048961462" duration="177000" />
       <workItem from="1681050319765" duration="566000" />
+      <workItem from="1681050913606" duration="311000" />
+      <workItem from="1681056138400" duration="3967000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1680078335044</created>
@@ -137,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681050396431</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Basic queries added, git repair">
+      <created>1681051179425</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1681051179425</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,5 +166,16 @@
     <MESSAGE value="Side panels rework, databaseHandler added" />
     <MESSAGE value="Basic queries added, git repair" />
     <option name="LAST_COMMIT_MESSAGE" value="Basic queries added, git repair" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/mainframe/Panel.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

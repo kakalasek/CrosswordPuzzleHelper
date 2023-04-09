@@ -3,16 +3,21 @@ package org.example.mainframe;
 import org.example.sideframes.add.AddPanel;
 import org.example.sideframes.alter.AlterPanel;
 import org.example.sideframes.remove.RemovePanel;
+import org.example.utilities.DatabaseHandler;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 import static org.example.utilities.TextHandler.*;
 import static org.example.sideframes.SideFrame.getInstance;
+import static org.example.queries.SearchQueries.*;
 
 public class Panel extends JPanel implements ActionListener {
+    DatabaseHandler databaseHandler = new DatabaseHandler("jdbc:postgresql://localhost:5432/crosswordpuzzle_db", "postgres", "postgres");
     JLabel requestLabel;
     JTextField requestField;
     JLabel numOfLettersLabel;
@@ -22,6 +27,7 @@ public class Panel extends JPanel implements ActionListener {
     JButton addButton;
     JButton removeButton;
     JButton alterButton;
+    ResultPane resultPane;
     public Panel(){
         this.setPreferredSize(new Dimension(1000, 700));
         this.setLayout(null);
@@ -48,6 +54,7 @@ public class Panel extends JPanel implements ActionListener {
 
         searchButton = new JButton("Search");
         searchButton.setBounds(50, 175, 100, 30);
+        searchButton.addActionListener(this);
         this.add(searchButton);
 
         editLabel = new JLabel("Alter the database:");
@@ -68,6 +75,10 @@ public class Panel extends JPanel implements ActionListener {
         alterButton.setBounds(50, 435, 100, 30);
         alterButton.addActionListener(this);
         this.add(alterButton);
+
+        resultPane = new ResultPane();
+        resultPane.setBounds(500, 0, 500, 700);
+        this.add(resultPane);
     }
 
     @Override
@@ -78,6 +89,12 @@ public class Panel extends JPanel implements ActionListener {
             getInstance("Remove", new RemovePanel());
         }else if(actionEvent.getSource() == alterButton){
             getInstance("Alter", new AlterPanel());
+        }else if(actionEvent.getSource() == searchButton){
+            ArrayList<String> queryResults = databaseHandler.executeAndReturn(basicSearch(requestField.getText(), numOfLettersField.getText()));
+            resultPane.clearLabels();
+            for(int i = 0; i < queryResults.size(); i++){
+                resultPane.setLabelText(i, queryResults.get(i));
+            }
         }
     }
 }
