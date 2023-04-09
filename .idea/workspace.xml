@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a93f8654-cf59-4608-af3b-3638790c75ee" name="Changes" comment="basic queries added" />
+    <list default="true" id="a93f8654-cf59-4608-af3b-3638790c75ee" name="Changes" comment="Basic queries added, git repair">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +20,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -79,6 +86,7 @@
       <workItem from="1681028459932" duration="4387000" />
       <workItem from="1681043297616" duration="5624000" />
       <workItem from="1681048961462" duration="177000" />
+      <workItem from="1681050319765" duration="566000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1680078335044</created>
@@ -122,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681032843442</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Basic queries added, git repair">
+      <created>1681050396431</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681050396431</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +151,7 @@
     <MESSAGE value="Side panels added" />
     <MESSAGE value="Mainframe acton listener added" />
     <MESSAGE value="Side panels rework, databaseHandler added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Side panels rework, databaseHandler added" />
+    <MESSAGE value="Basic queries added, git repair" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic queries added, git repair" />
   </component>
 </project>
