@@ -4,19 +4,21 @@ import org.example.sideframes.SidePanel;
 
 import javax.swing.*;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import static org.example.utilities.TextHandler.*;
 import static org.example.queries.RemoveQueries.*;
+import static org.example.utilities.InputInspector.*;
 
-public class RemovePanel extends SidePanel implements ActionListener {
+public class RemovePanel extends SidePanel{
     JLabel explainLabel;
     JLabel legendLabel;
     JTextField legendField;
     JLabel wordLabel;
     JTextField wordField;
     JButton removeButton;
+    JLabel warningLabel;
 
     protected void setUp(){
         explainLabel = new JLabel("Remove a record by providing its legend and word");
@@ -43,12 +45,25 @@ public class RemovePanel extends SidePanel implements ActionListener {
         removeButton.setBounds(10, 120, 100,  30);
         removeButton.addActionListener(this);
         this.add(removeButton);
+
+        warningLabel = new JLabel();
+        warningLabel.setForeground(Color.RED);
+        warningLabel.setBounds(10, 170,450, getTextHeight(warningLabel));
+        this.add(warningLabel);
     }
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         if(actionEvent.getSource() == removeButton){
-            databaseHandler.execute(removeOne(legendField.getText(), wordField.getText()));
+            warningLabel.setText("");
+
+            if(setWarnings("Legend", warningLabel, legendField, 0) > 0){
+                return;
+            }else if(setWarnings("Word", warningLabel, wordField, 2) > 0){
+                return;
+            }
+
+            databaseHandler.execute(removeOne(legendField.getText().toLowerCase(), wordField.getText().toLowerCase()));
         }
     }
 }

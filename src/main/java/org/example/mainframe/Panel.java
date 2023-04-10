@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import static org.example.utilities.TextHandler.*;
 import static org.example.sideframes.SideFrame.getInstance;
 import static org.example.queries.SearchQueries.*;
+import static org.example.utilities.InputInspector.*;
 
 public class Panel extends JPanel implements ActionListener {
     DatabaseHandler databaseHandler = new DatabaseHandler("jdbc:postgresql://localhost:5432/crosswordpuzzle_db", "postgres", "postgres");
@@ -28,6 +29,7 @@ public class Panel extends JPanel implements ActionListener {
     JButton removeButton;
     JButton alterButton;
     ResultPane resultPane;
+    JLabel warningLabel;
     public Panel(){
         this.setPreferredSize(new Dimension(1000, 700));
         this.setLayout(null);
@@ -79,6 +81,11 @@ public class Panel extends JPanel implements ActionListener {
         resultPane = new ResultPane();
         resultPane.setBounds(500, 0, 500, 700);
         this.add(resultPane);
+
+        warningLabel = new JLabel();
+        warningLabel.setForeground(Color.RED);
+        warningLabel.setBounds(50, 220, 400, getTextHeight(warningLabel));
+        this.add(warningLabel);
     }
 
     @Override
@@ -90,11 +97,30 @@ public class Panel extends JPanel implements ActionListener {
         }else if(actionEvent.getSource() == alterButton){
             getInstance("Alter", new AlterPanel());
         }else if(actionEvent.getSource() == searchButton){
-            ArrayList<String> queryResults = databaseHandler.executeAndReturn(basicSearch(requestField.getText(), numOfLettersField.getText()));
-            resultPane.clearLabels();
-            for(int i = 0; i < queryResults.size(); i++){
-                resultPane.setLabelText(i, queryResults.get(i));
-            }
+                warningLabel.setText("");
+
+                switch (legendInput(requestField.getText())){
+                    case 1: warningLabel.setText("Legend is empty!");
+                        return;
+                    case 2: warningLabel.setText("Invalid legend text!");
+                        return;
+                    case 3: warningLabel.setText("Too many characters in legend!");
+                        return;
+                }
+                switch (numOfLettersInput(numOfLettersField.getText())){
+                    case 1: warningLabel.setText("Number of letters is empty!");
+                        return;
+                    case 2: warningLabel.setText("Invalid number of letters!");
+                        return;
+                    case 3: warningLabel.setText("Too many numbers in number of letters!");
+                        return;
+                }
+
+                ArrayList<String> queryResults = databaseHandler.executeAndReturn(basicSearch(requestField.getText().toLowerCase(), numOfLettersField.getText().toLowerCase()));
+                resultPane.clearLabels();
+                for (int i = 0; i < queryResults.size(); i++) {
+                    resultPane.setLabelText(i, queryResults.get(i));
+                }
         }
     }
 }
