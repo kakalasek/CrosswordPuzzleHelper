@@ -7,16 +7,11 @@ public class DatabaseHandler{
     private Connection connection;
     private Statement statement;
 
-    public void execute(String query){
-        try {
+    public void execute(String query) throws SQLException{
             statement.execute(query);
-        }catch(SQLException e){
-            e.printStackTrace();
-        }
     }
 
-    public ArrayList<String> executeAndReturn(String query){
-        try {
+    public ArrayList<String> executeAndReturn(String query) throws SQLException{
             ArrayList<String> output = new ArrayList<String>();
             ResultSet queryResults = statement.executeQuery(query);
 
@@ -25,18 +20,10 @@ public class DatabaseHandler{
             }
 
             return output;
-        }catch (SQLException e){
-            e.printStackTrace();
-            return null;
-        }
     }
 
-    public DatabaseHandler(String databaseURL, String user, String password){
-        try {
+    public DatabaseHandler(String databaseURL, String user, String password) throws SQLException{
             connection = DriverManager.getConnection(databaseURL, user, password);
             statement = connection.createStatement();
-        }catch(SQLException e){
-            e.printStackTrace();
-        }
     }
 }

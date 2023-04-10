@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 import static org.example.utilities.TextHandler.*;
 import static org.example.queries.AlterQueries.*;
@@ -23,6 +24,9 @@ public class AlterPanel extends SidePanel{
     JTextField wordField_new;
     JButton alterButton;
     JLabel warningLabel;
+
+    public AlterPanel() throws SQLException {
+    }
 
     protected void setUp(){
         explainLabel = new JLabel("<html>Alter a record by providing the existing and new legend and word.<br>If one of the fields with new values is left blank,<br> that value is not altered.</html");
@@ -74,35 +78,39 @@ public class AlterPanel extends SidePanel{
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
-        if(actionEvent.getSource() == alterButton){
-            warningLabel.setText("");
-            int temp;
+        try {
+            if (actionEvent.getSource() == alterButton) {
+                warningLabel.setText("");
+                int temp;
 
-            if(setWarnings("Existing legend", warningLabel, legendField_exist, 0) > 0){
-                return;
+                if (setWarnings("Existing legend", warningLabel, legendField_exist, 0) > 0) {
+                    return;
 
-            }else if(setWarnings("Existing word", warningLabel, wordField_exist, 2) > 0){
-                return;
+                } else if (setWarnings("Existing word", warningLabel, wordField_exist, 2) > 0) {
+                    return;
 
-            }else if((temp = setWarnings("New legend", warningLabel, legendField_new, 0)) > 0){
-                if(temp == 1){
-                    if(setWarnings("New word", warningLabel, wordField_new, 2) == 1){
-                        warningLabel.setText("Both Legend and Word are empty!");
+                } else if ((temp = setWarnings("New legend", warningLabel, legendField_new, 0)) > 0) {
+                    if (temp == 1) {
+                        if (setWarnings("New word", warningLabel, wordField_new, 2) == 1) {
+                            warningLabel.setText("Both Legend and Word are empty!");
+                            return;
+                        }
+                        warningLabel.setText("");
+                    } else {
                         return;
                     }
-                    warningLabel.setText("");
-                }else {
-                    return;
+                } else if ((temp = setWarnings("New word", warningLabel, wordField_new, 2)) > 0) {
+                    if (temp == 1) {
+                        warningLabel.setText("");
+                    } else {
+                        return;
+                    }
                 }
-            }else if((temp = setWarnings("New word", warningLabel, wordField_new, 2)) > 0){
-                if(temp == 1){
-                    warningLabel.setText("");
-                }else {
-                    return;
-                }
-            }
 
-            databaseHandler.execute(alterOne(legendField_exist.getText().toLowerCase(), wordField_exist.getText().toLowerCase(), legendField_new.getText().toLowerCase(), wordField_new.getText().toLowerCase()));
+                databaseHandler.execute(alterOne(legendField_exist.getText().toLowerCase(), wordField_exist.getText().toLowerCase(), legendField_new.getText().toLowerCase(), wordField_new.getText().toLowerCase()));
+            }
+        }catch (SQLException e){
+            throw new RuntimeException(e);
         }
     }
 }

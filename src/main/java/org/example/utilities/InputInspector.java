@@ -17,7 +17,7 @@ public class InputInspector {
     public static int numOfLettersInput(String input){
         if (input.equals("")) {
             return 1;
-        }else if(!input.matches("\\d+")){
+        }else if(!input.matches("\\d+") || (Integer.parseInt(input) < 1)){
             return 2;
         }else if(input.length() > 9){
             return 3;

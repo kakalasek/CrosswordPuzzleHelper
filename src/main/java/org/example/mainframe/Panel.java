@@ -9,7 +9,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.lang.reflect.Array;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import static org.example.utilities.TextHandler.*;
@@ -30,7 +32,7 @@ public class Panel extends JPanel implements ActionListener {
     JButton alterButton;
     ResultPane resultPane;
     JLabel warningLabel;
-    public Panel(){
+    public Panel() throws SQLException {
         this.setPreferredSize(new Dimension(1000, 700));
         this.setLayout(null);
         setUp();
@@ -90,37 +92,51 @@ public class Panel extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent actionEvent){
-        if(actionEvent.getSource() == addButton) {
-            getInstance("Add", new AddPanel());
-        }else if(actionEvent.getSource() == removeButton){
-            getInstance("Remove", new RemovePanel());
-        }else if(actionEvent.getSource() == alterButton){
-            getInstance("Alter", new AlterPanel());
-        }else if(actionEvent.getSource() == searchButton){
+        try {
+            if (actionEvent.getSource() == addButton) {
+                getInstance("Add", new AddPanel());
+
+            } else if (actionEvent.getSource() == removeButton) {
+                getInstance("Remove", new RemovePanel());
+
+            } else if (actionEvent.getSource() == alterButton) {
+                getInstance("Alter", new AlterPanel());
+
+            } else if (actionEvent.getSource() == searchButton) {
                 warningLabel.setText("");
 
-                switch (legendInput(requestField.getText())){
-                    case 1: warningLabel.setText("Legend is empty!");
+                switch (legendInput(requestField.getText())) {
+                    case 1:
+                        warningLabel.setText("Legend is empty!");
                         return;
-                    case 2: warningLabel.setText("Invalid legend text!");
+                    case 2:
+                        warningLabel.setText("Invalid Legend text!");
                         return;
-                    case 3: warningLabel.setText("Too many characters in legend!");
+                    case 3:
+                        warningLabel.setText("Too many characters in Legend!");
                         return;
                 }
-                switch (numOfLettersInput(numOfLettersField.getText())){
-                    case 1: warningLabel.setText("Number of letters is empty!");
+                switch (numOfLettersInput(numOfLettersField.getText())) {
+                    case 1:
+                        warningLabel.setText("Number of letters is empty!");
                         return;
-                    case 2: warningLabel.setText("Invalid number of letters!");
+                    case 2:
+                        warningLabel.setText("Invalid Number of letters!");
                         return;
-                    case 3: warningLabel.setText("Too many numbers in number of letters!");
+                    case 3:
+                        warningLabel.setText("Too many numbers in Number of letters!");
                         return;
                 }
 
                 ArrayList<String> queryResults = databaseHandler.executeAndReturn(basicSearch(requestField.getText().toLowerCase(), numOfLettersField.getText().toLowerCase()));
+
                 resultPane.clearLabels();
                 for (int i = 0; i < queryResults.size(); i++) {
                     resultPane.setLabelText(i, queryResults.get(i));
                 }
+            }
+        } catch(SQLException e){
+            throw new RuntimeException(e);
         }
     }
 }

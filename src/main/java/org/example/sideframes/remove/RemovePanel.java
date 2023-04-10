@@ -6,6 +6,7 @@ import javax.swing.*;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.sql.SQLException;
 
 import static org.example.utilities.TextHandler.*;
 import static org.example.queries.RemoveQueries.*;
@@ -19,6 +20,9 @@ public class RemovePanel extends SidePanel{
     JTextField wordField;
     JButton removeButton;
     JLabel warningLabel;
+
+    public RemovePanel() throws SQLException {
+    }
 
     protected void setUp(){
         explainLabel = new JLabel("Remove a record by providing its legend and word");
@@ -54,16 +58,20 @@ public class RemovePanel extends SidePanel{
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
-        if(actionEvent.getSource() == removeButton){
-            warningLabel.setText("");
+        try {
+            if (actionEvent.getSource() == removeButton) {
+                warningLabel.setText("");
 
-            if(setWarnings("Legend", warningLabel, legendField, 0) > 0){
-                return;
-            }else if(setWarnings("Word", warningLabel, wordField, 2) > 0){
-                return;
+                if (setWarnings("Legend", warningLabel, legendField, 0) > 0) {
+                    return;
+                } else if (setWarnings("Word", warningLabel, wordField, 2) > 0) {
+                    return;
+                }
+
+                databaseHandler.execute(removeOne(legendField.getText().toLowerCase(), wordField.getText().toLowerCase()));
             }
-
-            databaseHandler.execute(removeOne(legendField.getText().toLowerCase(), wordField.getText().toLowerCase()));
+        }catch (Exception e){
+            throw new RuntimeException(e);
         }
     }
 }

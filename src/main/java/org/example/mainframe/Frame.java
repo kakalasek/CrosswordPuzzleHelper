@@ -1,10 +1,11 @@
 package org.example.mainframe;
 
 import javax.swing.*;
+import java.sql.SQLException;
 
 public class Frame extends JFrame {
 
-    public Frame(){
+    public Frame() throws SQLException {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setTitle("CrosswordPuzzleHelper");
         this.setResizable(false);

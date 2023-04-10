@@ -7,6 +7,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import static org.example.utilities.TextHandler.*;
@@ -14,7 +16,7 @@ import static org.example.queries.InsertQueries.*;
 import static org.example.utilities.FileHandler.*;
 import static org.example.utilities.InputInspector.*;
 
-public class AddPanel extends SidePanel{
+public class AddPanel extends SidePanel {
     JLabel explainLabel;
     JLabel legendLabel;
     JTextField legendField;
@@ -28,7 +30,10 @@ public class AddPanel extends SidePanel{
     JButton fileAddButton;
     JLabel warningLabel;
 
-    protected void setUp(){
+    public AddPanel() throws SQLException {
+    }
+
+    protected void setUp() {
         explainLabel = new JLabel("Add records by using fields or by using a csv file");
         explainLabel.setBounds(10, 20, getTextWidth(explainLabel), getTextHeight(explainLabel));
         this.add(explainLabel);
@@ -83,24 +88,32 @@ public class AddPanel extends SidePanel{
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
-        if(actionEvent.getSource() == addButton){
-            warningLabel.setText("");
+        try {
+            if (actionEvent.getSource() == addButton) {
+                warningLabel.setText("");
 
-            if(setWarnings("Legend", warningLabel, legendField, 0) > 0){
-                return;
-            }else if(setWarnings("Number of letters", warningLabel, numOfLettersField, 1) > 0){
-                return;
-            }else if(setWarnings("Word", warningLabel, wordField, 2) > 0){
-                return;
+                if (setWarnings("Legend", warningLabel, legendField, 0) > 0) {
+                    return;
+                } else if (setWarnings("Number of letters", warningLabel, numOfLettersField, 1) > 0) {
+                    return;
+                } else if (setWarnings("Word", warningLabel, wordField, 2) > 0) {
+                    return;
+                }
+
+                databaseHandler.execute(insertOne(legendField.getText().toLowerCase(), numOfLettersField.getText().toLowerCase(), wordField.getText().toLowerCase()));
+
+            } else if (actionEvent.getSource() == fileAddButton) {
+                warningLabel.setText("");
+
+                ArrayList<String[]> valueSet = CSV_to_array(fileField.getText().toLowerCase());
+                for (String[] values : valueSet) {
+                    databaseHandler.execute(insertOne(values[0].toLowerCase(), values[1].toLowerCase(), values[2].toLowerCase()));
+                }
             }
-
-            databaseHandler.execute(insertOne(legendField.getText().toLowerCase(), numOfLettersField.getText().toLowerCase(), wordField.getText().toLowerCase()));
-
-        }else if(actionEvent.getSource() == fileAddButton){
-            ArrayList<String[]> valueSet = CSV_to_array(fileField.getText().toLowerCase());
-            for(String[] values : valueSet){
-                databaseHandler.execute(insertOne(values[0].toLowerCase(), values[1].toLowerCase(), values[2].toLowerCase()));
-            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }catch (IOException e){
+            warningLabel.setText("Invalid file path or file!");
         }
     }
 }

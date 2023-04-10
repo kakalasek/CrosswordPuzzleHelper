@@ -5,23 +5,26 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import static org.example.utilities.InputInspector.*;
+
 public class FileHandler {
 
-    public static ArrayList<String[]> CSV_to_array(String filePath){
-        try {
+    public static ArrayList<String[]> CSV_to_array(String filePath) throws IOException{
             BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath));
             String line = "";
             ArrayList<String[]> output = new ArrayList<String[]>();
+            String[] temp;
 
             while((line = bufferedReader.readLine()) != null){
-                output.add(line.split(","));
+                if((temp = line.split(",")).length == 3 && (legendInput(temp[0]) + numOfLettersInput(temp[1]) + wordInput(temp[2])) == 0){
+                        output.add(line.split(","));
+                }else{
+                    throw new IOException();
+                }
             }
 
-            return output;
+            bufferedReader.close();
 
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
+            return output;
     }
 }
