@@ -5,7 +5,7 @@ public class InputInspector {
     public static int legendInput(String input) {
         if (input.equals("")) {
             return 1;
-        }else if(!input.matches("[A-Za-zěščřžýáíéňťúůóď\\s]+")){
+        }else if(!input.matches("[A-Za-zěščřžýáíéňťúůóďĚŠČŘŽÝÁÍÉŮÚĎŤÓŇ\\s]+") || input.contains("\t") || input.contains("\n")){
             return 2;
         }else if(input.length() > 199){
             return 3;
@@ -19,7 +19,7 @@ public class InputInspector {
             return 1;
         }else if(!input.matches("\\d+") || (Integer.parseInt(input) < 1)){
             return 2;
-        }else if(input.length() > 9){
+        }else if(input.length() > 2){
             return 3;
         }
         return 0;
@@ -28,7 +28,7 @@ public class InputInspector {
     public static int wordInput(String input){
         if (input.equals("")) {
             return 1;
-        }else if(!input.matches("[A-Za-zěščřžýáíéňťúůóď]+")){
+        }else if(!input.matches("[A-Za-zěščřžýáíéňťúůóďĚŠČŘŽÝÁÍÉŮÚĎŤÓŇ]+")){
             return 2;
         }else if(input.length() > 199){
             return 3;

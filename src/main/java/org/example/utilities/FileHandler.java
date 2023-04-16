@@ -19,6 +19,7 @@ public class FileHandler {
                 if((temp = line.split(",")).length == 3 && (legendInput(temp[0]) + numOfLettersInput(temp[1]) + wordInput(temp[2])) == 0){
                         output.add(line.split(","));
                 }else{
+                    bufferedReader.close();
                     throw new IOException();
                 }
             }
