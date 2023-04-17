@@ -7,7 +7,7 @@ public class InputInspector {
             return 1;
         }else if(!input.matches("[A-Za-zěščřžýáíéňťúůóďĚŠČŘŽÝÁÍÉŮÚĎŤÓŇ\\s]+") || input.contains("\t") || input.contains("\n")){
             return 2;
-        }else if(input.length() > 199){
+        }else if(input.length() > 99){
             return 3;
         }
 
@@ -30,7 +30,7 @@ public class InputInspector {
             return 1;
         }else if(!input.matches("[A-Za-zěščřžýáíéňťúůóďĚŠČŘŽÝÁÍÉŮÚĎŤÓŇ]+")){
             return 2;
-        }else if(input.length() > 199){
+        }else if(input.length() > 99){
             return 3;
         }
 

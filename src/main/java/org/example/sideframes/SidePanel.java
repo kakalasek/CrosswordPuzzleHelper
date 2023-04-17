@@ -35,9 +35,9 @@ public abstract class SidePanel extends JPanel implements ActionListener {
         switch(inspection){
             case 1: warningLabel.setText(text + " is empty!");
                 return 1;
-            case 2: warningLabel.setText("Invalid " + text);
+            case 2: warningLabel.setText("Invalid " + text + "!");
                 return 2;
-            case 3: warningLabel.setText("Too many characters in " + text + "!");
+            case 3: warningLabel.setText(text + " is too long!");
                 return 3;
             default:
                 return 0;

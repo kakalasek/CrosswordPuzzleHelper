@@ -90,30 +90,39 @@ public class AddPanel extends SidePanel {
     public void actionPerformed(ActionEvent actionEvent) {
         try {
             if (actionEvent.getSource() == addButton) {
-                warningLabel.setText("");
-
-                if (setWarnings("Legend", warningLabel, legendField, 0) > 0) {
-                    return;
-                } else if (setWarnings("Number of letters", warningLabel, numOfLettersField, 1) > 0) {
-                    return;
-                } else if (setWarnings("Word", warningLabel, wordField, 2) > 0) {
-                    return;
-                }
-
-                databaseHandler.execute(insertOne(legendField.getText().toLowerCase(), numOfLettersField.getText().toLowerCase(), wordField.getText().toLowerCase()));
+                add();
 
             } else if (actionEvent.getSource() == fileAddButton) {
-                warningLabel.setText("");
+                addFromFile();
 
-                ArrayList<String[]> valueSet = CSV_to_array(fileField.getText().toLowerCase());
-                for (String[] values : valueSet) {
-                    databaseHandler.execute(insertOne(values[0].toLowerCase(), values[1].toLowerCase(), values[2].toLowerCase()));
-                }
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }catch (IOException e){
             warningLabel.setText("Invalid file path or file!");
+        }
+    }
+
+    private void add() throws SQLException {
+        warningLabel.setText("");
+
+        if (setWarnings("Legend", warningLabel, legendField, 0) > 0) {
+            return;
+        } else if (setWarnings("Number of letters", warningLabel, numOfLettersField, 1) > 0) {
+            return;
+        } else if (setWarnings("Word", warningLabel, wordField, 2) > 0) {
+            return;
+        }
+
+        databaseHandler.execute(insertOne(legendField.getText().toLowerCase(), numOfLettersField.getText().toLowerCase(), wordField.getText().toLowerCase()));
+    }
+
+    private void addFromFile() throws SQLException, IOException {
+        warningLabel.setText("");
+
+        ArrayList<String[]> valueSet = CSV_to_array(fileField.getText().toLowerCase());
+        for (String[] values : valueSet) {
+            databaseHandler.execute(insertOne(values[0].toLowerCase(), values[1].toLowerCase(), values[2].toLowerCase()));
         }
     }
 }

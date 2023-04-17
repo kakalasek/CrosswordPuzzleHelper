@@ -60,18 +60,22 @@ public class RemovePanel extends SidePanel{
     public void actionPerformed(ActionEvent actionEvent) {
         try {
             if (actionEvent.getSource() == removeButton) {
-                warningLabel.setText("");
-
-                if (setWarnings("Legend", warningLabel, legendField, 0) > 0) {
-                    return;
-                } else if (setWarnings("Word", warningLabel, wordField, 2) > 0) {
-                    return;
-                }
-
-                databaseHandler.execute(removeOne(legendField.getText().toLowerCase(), wordField.getText().toLowerCase()));
+                remove();
             }
         }catch (Exception e){
             throw new RuntimeException(e);
         }
+    }
+
+    private void remove() throws SQLException {
+        warningLabel.setText("");
+
+        if (setWarnings("Legend", warningLabel, legendField, 0) > 0) {
+            return;
+        } else if (setWarnings("Word", warningLabel, wordField, 2) > 0) {
+            return;
+        }
+
+        databaseHandler.execute(removeOne(legendField.getText().toLowerCase(), wordField.getText().toLowerCase()));
     }
 }
