@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a93f8654-cf59-4608-af3b-3638790c75ee" name="Changes" comment="First unit tests">
+    <list default="true" id="a93f8654-cf59-4608-af3b-3638790c75ee" name="Changes" comment="Second unit tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/mainframe/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/mainframe/Panel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/sideframes/SidePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/sideframes/SidePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/sideframes/add/AddPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/sideframes/add/AddPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/sideframes/alter/AlterPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/sideframes/alter/AlterPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/sideframes/remove/RemovePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/sideframes/remove/RemovePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utilities/InputInspector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utilities/InputInspector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/sideframes/add/AddPanelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/sideframes/add/AddPanelTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/mainframe/PanelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/mainframe/PanelTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/sideframes/alter/AlterPanelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/sideframes/alter/AlterPanelTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/sideframes/remove/RemovePanelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/sideframes/remove/RemovePanelTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/utilities/DatabaseHandlerTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,92 +84,92 @@
       <recent name="org.example.mainframe" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="AddPanelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.PanelTest.throwsWarningIRequestIsInvalid">
+    <configuration name="AlterPanelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CrosswordPuzzleHelper" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.sideframes.add.*" />
+          <option name="PATTERN" value="org.example.sideframes.alter.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.example.sideframes.add" />
-      <option name="MAIN_CLASS_NAME" value="org.example.sideframes.add.AddPanelTest" />
+      <option name="PACKAGE_NAME" value="org.example.sideframes.alter" />
+      <option name="MAIN_CLASS_NAME" value="org.example.sideframes.alter.AlterPanelTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AddPanelTest.throwsWarningIfFileIsInvalid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AlterPanelTest.throwsWarningIfNewLegendIsTooLong" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CrosswordPuzzleHelper" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.sideframes.add.*" />
+          <option name="PATTERN" value="org.example.sideframes.alter.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.example.sideframes.add" />
-      <option name="MAIN_CLASS_NAME" value="org.example.sideframes.add.AddPanelTest" />
-      <option name="METHOD_NAME" value="throwsWarningIfFileIsInvalid" />
+      <option name="PACKAGE_NAME" value="org.example.sideframes.alter" />
+      <option name="MAIN_CLASS_NAME" value="org.example.sideframes.alter.AlterPanelTest" />
+      <option name="METHOD_NAME" value="throwsWarningIfNewLegendIsTooLong" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AddPanelTest.throwsWarningIfFilepathIsInvalid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AlterPanelTest.throwsWarningIfNewWordIsTooLong" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CrosswordPuzzleHelper" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.sideframes.add.*" />
+          <option name="PATTERN" value="org.example.sideframes.alter.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.example.sideframes.add" />
-      <option name="MAIN_CLASS_NAME" value="org.example.sideframes.add.AddPanelTest" />
-      <option name="METHOD_NAME" value="throwsWarningIfFilepathIsInvalid" />
+      <option name="PACKAGE_NAME" value="org.example.sideframes.alter" />
+      <option name="MAIN_CLASS_NAME" value="org.example.sideframes.alter.AlterPanelTest" />
+      <option name="METHOD_NAME" value="throwsWarningIfNewWordIsTooLong" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AddPanelTest.throwsWarningIfLegendIsBlank" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PanelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CrosswordPuzzleHelper" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.sideframes.add.*" />
+          <option name="PATTERN" value="org.example.mainframe.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.example.sideframes.add" />
-      <option name="MAIN_CLASS_NAME" value="org.example.sideframes.add.AddPanelTest" />
-      <option name="METHOD_NAME" value="throwsWarningIfLegendIsBlank" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RemovePanelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CrosswordPuzzleHelper" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.sideframes.remove.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.sideframes.remove" />
-      <option name="MAIN_CLASS_NAME" value="org.example.sideframes.remove.RemovePanelTest" />
+      <option name="PACKAGE_NAME" value="org.example.mainframe" />
+      <option name="MAIN_CLASS_NAME" value="org.example.mainframe.PanelTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PanelTest.throwsWarningIRequestIsInvalid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CrosswordPuzzleHelper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.mainframe.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.mainframe" />
+      <option name="MAIN_CLASS_NAME" value="org.example.mainframe.PanelTest" />
+      <option name="METHOD_NAME" value="throwsWarningIRequestIsInvalid" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AddPanelTest.throwsWarningIfFileIsInvalid" />
-        <item itemvalue="JUnit.AddPanelTest.throwsWarningIfFilepathIsInvalid" />
-        <item itemvalue="JUnit.AddPanelTest" />
-        <item itemvalue="JUnit.AddPanelTest.throwsWarningIfLegendIsBlank" />
-        <item itemvalue="JUnit.RemovePanelTest" />
+        <item itemvalue="JUnit.PanelTest.throwsWarningIRequestIsInvalid" />
+        <item itemvalue="JUnit.PanelTest" />
+        <item itemvalue="JUnit.AlterPanelTest.throwsWarningIfNewLegendIsTooLong" />
+        <item itemvalue="JUnit.AlterPanelTest.throwsWarningIfNewWordIsTooLong" />
+        <item itemvalue="JUnit.AlterPanelTest" />
       </list>
     </recent_temporary>
   </component>
@@ -220,7 +212,10 @@
       <workItem from="1681654374053" duration="1285000" />
       <workItem from="1681659197272" duration="2035000" />
       <workItem from="1681661267801" duration="612000" />
-      <workItem from="1681746155506" duration="2863000" />
+      <workItem from="1681746155506" duration="3097000" />
+      <workItem from="1681830410806" duration="633000" />
+      <workItem from="1681836122083" duration="2475000" />
+      <workItem from="1681841802492" duration="2685000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1680078335044</created>
@@ -320,7 +315,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681653155740</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Second unit tests">
+      <created>1681749220743</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1681749220743</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,6 +342,7 @@
     <MESSAGE value="Exceptions handled" />
     <MESSAGE value="Unit tests created" />
     <MESSAGE value="First unit tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="First unit tests" />
+    <MESSAGE value="Second unit tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Second unit tests" />
   </component>
 </project>

@@ -113,13 +113,13 @@ public class Panel extends JPanel implements ActionListener {
 
         switch (legendInput(requestField.getText())) {
             case 1:
-                warningLabel.setText("Legend is empty!");
+                warningLabel.setText("Request is empty!");
                 return;
             case 2:
-                warningLabel.setText("Invalid Legend text!");
+                warningLabel.setText("Invalid Request!");
                 return;
             case 3:
-                warningLabel.setText("Too many characters in Legend!");
+                warningLabel.setText("Request is too long!");
                 return;
         }
         switch (numOfLettersInput(numOfLettersField.getText())) {
@@ -130,7 +130,7 @@ public class Panel extends JPanel implements ActionListener {
                 warningLabel.setText("Invalid Number of letters!");
                 return;
             case 3:
-                warningLabel.setText("Too many numbers in Number of letters!");
+                warningLabel.setText("Number of letters is too long!");
                 return;
         }
 
