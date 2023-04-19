@@ -108,10 +108,14 @@ public class Panel extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * Calls a query to search in the database for desired record. Uses fields from its Panel. If any of the field's string sets a warning, the method returns with no query performed
+     * @throws SQLException If something goes wrong
+     */
     private void search() throws SQLException {
-        warningLabel.setText("");
+        warningLabel.setText(""); //clears the warning label
 
-        switch (legendInput(requestField.getText())) {
+        switch (legendInput(requestField.getText())) { //checks if the legend doesn't set any warnings
             case 1:
                 warningLabel.setText("Request is empty!");
                 return;
@@ -122,7 +126,7 @@ public class Panel extends JPanel implements ActionListener {
                 warningLabel.setText("Request is too long!");
                 return;
         }
-        switch (numOfLettersInput(numOfLettersField.getText())) {
+        switch (numOfLettersInput(numOfLettersField.getText())) { //checks if the number of letters doesn't set any warnings
             case 1:
                 warningLabel.setText("Number of letters is empty!");
                 return;
@@ -134,9 +138,9 @@ public class Panel extends JPanel implements ActionListener {
                 return;
         }
 
-        ArrayList<String> queryResults = databaseHandler.executeAndReturn(basicSearch(requestField.getText().toLowerCase(), numOfLettersField.getText().toLowerCase()));
+        ArrayList<String> queryResults = databaseHandler.executeAndReturn(basicSearch(requestField.getText().toLowerCase(), numOfLettersField.getText().toLowerCase()), "word");
 
-        resultPane.clearLabels();
+        resultPane.clearLabels(); //clears labels before every new search result
         for (int i = 0; i < queryResults.size(); i++) {
             resultPane.setLabelText(i, queryResults.get(i));
         }

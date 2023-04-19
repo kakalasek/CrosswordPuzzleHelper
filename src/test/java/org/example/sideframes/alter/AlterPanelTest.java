@@ -107,7 +107,7 @@ class AlterPanelTest {
             alterPanel.legendField_new.setText("");
             alterPanel.wordField_new.setText("");
             alterPanel.alterButton.doClick();
-            assertEquals("Both Legend and Word are empty!", alterPanel.warningLabel.getText());
+            assertEquals("Both New legend and New word are empty!", alterPanel.warningLabel.getText());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

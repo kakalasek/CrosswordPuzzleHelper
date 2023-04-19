@@ -86,30 +86,24 @@ public class AlterPanel extends SidePanel{
         }
     }
 
+
+    /**
+     * Calls a query to alter a record in the database. Uses fields from its AlterPanel. If any of the field's string sets a warning, this method will return without performing the query
+     * @throws SQLException If something goes wrong
+     */
     private void alter() throws SQLException {
-        warningLabel.setText("");
-        int temp;
+        warningLabel.setText(""); //clears the warning label
 
-        if (setWarnings("Existing legend", warningLabel, legendField_exist, 0) > 0) {
-            return;
 
-        } else if (setWarnings("Existing word", warningLabel, wordField_exist, 2) > 0) {
-            return;
-
-        } else if ((temp = setWarnings("New legend", warningLabel, legendField_new, 0)) > 0) {
-            if (temp == 1) {
-                if (setWarnings("New word", warningLabel, wordField_new, 2) == 1) {
-                    warningLabel.setText("Both Legend and Word are empty!");
-                    return;
-                }
-                warningLabel.setText("");
-            } else {
+        if (setWarnings("Existing legend", warningLabel, legendField_exist, 0) > 0 || setWarnings("Existing word", warningLabel, wordField_exist, 2) > 0 || setWarnings("New legend", warningLabel, legendField_new, 0) > 0 || setWarnings("New word", warningLabel, wordField_new, 2) > 0) { //checks if any field sets a warning
+            if(setWarnings("New word", warningLabel, wordField_new, 2) == 1 && setWarnings("New legend", warningLabel, legendField_new, 0) == 1){ //checks if both new legend and new word are empty and if so, sets a special warning
+                warningLabel.setText("Both New legend and New word are empty!");
                 return;
-            }
-        } else if ((temp = setWarnings("New word", warningLabel, wordField_new, 2)) > 0) {
-            if (temp == 1) {
-                warningLabel.setText("");
-            } else {
+            }else if(setWarnings("New word", warningLabel, wordField_new, 2) == 0 && setWarnings("New legend", warningLabel, legendField_new, 0) == 1){ //
+
+            }else if(setWarnings("New word", warningLabel, wordField_new, 2) == 1 && setWarnings("New legend", warningLabel, legendField_new, 0) == 0){
+
+            }else{
                 return;
             }
         }

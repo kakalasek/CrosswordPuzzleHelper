@@ -11,9 +11,9 @@ public class ResultPane extends JPanel {
     }
 
     private void setUp() {
-        int y = 10;
+        int y = 10; //starting Y value
 
-        for(int i = 0; i < resultArray.length; i++){
+        for(int i = 0; i < resultArray.length; i++){ //sets up the array of JLabel that are used to hold search results
             resultArray[i] = new JLabel();
             resultArray[i].setBounds(10, y, 480, 30);
             this.add(resultArray[i]);

@@ -97,30 +97,35 @@ public class AddPanel extends SidePanel {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }catch (IOException e){
-            warningLabel.setText("Invalid file path or file!");
+            warningLabel.setText("Invalid file path or file!"); //if the format of the file was invalid or the file has not been found at all, this warning is set
         }
     }
 
+    /**
+     * Calls a query to add a record to the database. Uses fields from its AddPanel. If any field's string sets a warning, the method will return without performing the query
+     * @throws SQLException If something goes wrong
+     */
     private void add() throws SQLException {
-        warningLabel.setText("");
+        warningLabel.setText(""); //clear the warning label
 
-        if (setWarnings("Legend", warningLabel, legendField, 0) > 0) {
-            return;
-        } else if (setWarnings("Number of letters", warningLabel, numOfLettersField, 1) > 0) {
-            return;
-        } else if (setWarnings("Word", warningLabel, wordField, 2) > 0) {
+        if (setWarnings("Legend", warningLabel, legendField, 0) > 0 || setWarnings("Number of letters", warningLabel, numOfLettersField, 1) > 0 || setWarnings("Word", warningLabel, wordField, 2) > 0) { //checks if any of the fields doesn't set a warning
             return;
         }
 
         databaseHandler.execute(insertOne(legendField.getText().toLowerCase(), numOfLettersField.getText().toLowerCase(), wordField.getText().toLowerCase()));
     }
 
+    /**
+     * Calls a query to add data from a CSV file with a special format
+     * @throws SQLException If something goes wrong
+     * @throws IOException If there is a problem with either the path to a file or its format
+     */
     private void addFromFile() throws SQLException, IOException {
-        warningLabel.setText("");
+        warningLabel.setText(""); //clear the warning label
 
         ArrayList<String[]> valueSet = CSV_to_array(fileField.getText().toLowerCase());
         for (String[] values : valueSet) {
-            databaseHandler.execute(insertOne(values[0].toLowerCase(), values[1].toLowerCase(), values[2].toLowerCase()));
+            databaseHandler.execute(insertOne(values[0].toLowerCase(), values[1].toLowerCase(), values[2].toLowerCase())); //will throw and exception if the format is invalid
         }
     }
 }

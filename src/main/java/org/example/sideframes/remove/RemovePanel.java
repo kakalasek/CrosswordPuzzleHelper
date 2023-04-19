@@ -66,12 +66,14 @@ public class RemovePanel extends SidePanel{
         }
     }
 
+    /**
+     * Calls a query to remove a record from the database. Uses fields from its RemovePanel. If any field's string sets a warning, the method returns without performing the query
+     * @throws SQLException If something goes wrong
+     */
     private void remove() throws SQLException {
-        warningLabel.setText("");
+        warningLabel.setText(""); //clears the warning label
 
-        if (setWarnings("Legend", warningLabel, legendField, 0) > 0) {
-            return;
-        } else if (setWarnings("Word", warningLabel, wordField, 2) > 0) {
+        if (setWarnings("Legend", warningLabel, legendField, 0) > 0 || setWarnings("Word", warningLabel, wordField, 2) > 0) { //checks if the input is alright. If any sets a warning, method returns without performing the query
             return;
         }
 
