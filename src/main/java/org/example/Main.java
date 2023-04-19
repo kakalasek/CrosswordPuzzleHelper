@@ -1,7 +1,6 @@
 package org.example;
 
 import org.example.mainframe.Frame;
-import org.example.sideframes.remove.RemovePanel;
 
 import java.sql.SQLException;
 

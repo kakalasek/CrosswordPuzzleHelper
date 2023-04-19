@@ -10,7 +10,6 @@ import java.sql.SQLException;
 
 import static org.example.utilities.TextHandler.*;
 import static org.example.queries.RemoveQueries.*;
-import static org.example.utilities.InputInspector.*;
 
 public class RemovePanel extends SidePanel{
     JLabel explainLabel;

@@ -1,7 +1,6 @@
 package org.example.mainframe;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class ResultPane extends JPanel {
     private JLabel[] resultArray = new JLabel[12];

@@ -6,7 +6,6 @@ import javax.swing.*;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -14,7 +13,6 @@ import java.util.ArrayList;
 import static org.example.utilities.TextHandler.*;
 import static org.example.queries.InsertQueries.*;
 import static org.example.utilities.FileHandler.*;
-import static org.example.utilities.InputInspector.*;
 
 public class AddPanel extends SidePanel {
     JLabel explainLabel;
