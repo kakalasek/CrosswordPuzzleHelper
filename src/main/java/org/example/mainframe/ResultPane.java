@@ -1,6 +1,7 @@
 package org.example.mainframe;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class ResultPane extends JPanel {
     private JLabel[] resultArray = new JLabel[12];
@@ -13,9 +14,10 @@ public class ResultPane extends JPanel {
     private void setUp() {
         int y = 10; //starting Y value
 
-        for(int i = 0; i < resultArray.length; i++){ //sets up the array of JLabel that are used to hold search results
+        for(int i = 0; i < resultArray.length; i++){ //sets up the array of JLabels that are used to hold search results
             resultArray[i] = new JLabel();
-            resultArray[i].setBounds(10, y, 480, 30);
+            resultArray[i].setFont(new Font("Serif", Font.PLAIN, 20));
+            resultArray[i].setBounds(10, y, 480, 35);
             this.add(resultArray[i]);
 
             y += 50;

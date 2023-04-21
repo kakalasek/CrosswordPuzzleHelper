@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a93f8654-cf59-4608-af3b-3638790c75ee" name="Changes" comment="Unused inputs clear">
+    <list default="true" id="a93f8654-cf59-4608-af3b-3638790c75ee" name="Changes" comment="Code commented">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/mainframe/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/mainframe/Panel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/sideframes/SidePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/sideframes/SidePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/sideframes/add/AddPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/sideframes/add/AddPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/sideframes/alter/AlterPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/sideframes/alter/AlterPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/sideframes/remove/RemovePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/sideframes/remove/RemovePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utilities/DatabaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utilities/DatabaseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utilities/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utilities/FileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utilities/InputInspector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utilities/InputInspector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utilities/TextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utilities/TextHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/mainframe/ResultPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/mainframe/ResultPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/queries/SearchQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/queries/SearchQueries.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +84,7 @@
       <recent name="org.example.mainframe" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AlterPanelTest">
+  <component name="RunManager">
     <configuration name="AlterPanelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CrosswordPuzzleHelper" />
       <extension name="coverage">
@@ -171,11 +165,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AlterPanelTest" />
         <item itemvalue="JUnit.PanelTest.throwsWarningIRequestIsInvalid" />
         <item itemvalue="JUnit.PanelTest" />
         <item itemvalue="JUnit.AlterPanelTest.throwsWarningIfNewLegendIsTooLong" />
         <item itemvalue="JUnit.AlterPanelTest.throwsWarningIfNewWordIsTooLong" />
-        <item itemvalue="JUnit.AlterPanelTest" />
       </list>
     </recent_temporary>
   </component>
@@ -225,7 +219,9 @@
       <workItem from="1681889308485" duration="495000" />
       <workItem from="1681890880948" duration="2974000" />
       <workItem from="1681909695152" duration="2530000" />
-      <workItem from="1681914939832" duration="1241000" />
+      <workItem from="1681914939832" duration="4053000" />
+      <workItem from="1681920028060" duration="76000" />
+      <workItem from="1682076324181" duration="2715000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1680078335044</created>
@@ -346,7 +342,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681889791726</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Code commented">
+      <created>1681918989474</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1681918989474</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,6 +372,7 @@
     <MESSAGE value="Second unit tests" />
     <MESSAGE value="Third unit tests" />
     <MESSAGE value="Unused inputs clear" />
-    <option name="LAST_COMMIT_MESSAGE" value="Unused inputs clear" />
+    <MESSAGE value="Code commented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code commented" />
   </component>
 </project>

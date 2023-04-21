@@ -138,11 +138,12 @@ public class Panel extends JPanel implements ActionListener {
                 return;
         }
 
-        ArrayList<String> queryResults = databaseHandler.executeAndReturn(basicSearch(requestField.getText().toLowerCase(), numOfLettersField.getText().toLowerCase()), "word");
+        ArrayList<String> queryResultsWord = databaseHandler.executeAndReturn(basicSearch(requestField.getText().toLowerCase(), numOfLettersField.getText().toLowerCase(), "word"), "word");
+        ArrayList<String> queryResultsLegend = databaseHandler.executeAndReturn(basicSearch(requestField.getText().toLowerCase(), numOfLettersField.getText().toLowerCase(), "legend"), "legend");
 
         resultPane.clearLabels(); //clears labels before every new search result
-        for (int i = 0; i < queryResults.size(); i++) {
-            resultPane.setLabelText(i, queryResults.get(i));
+        for (int i = 0; i < queryResultsWord.size(); i++) {
+            resultPane.setLabelText(i, queryResultsLegend.get(i) + ": " + queryResultsWord.get(i));
         }
     }
 }
