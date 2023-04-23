@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a93f8654-cf59-4608-af3b-3638790c75ee" name="Changes" comment="Code commented">
+    <list default="true" id="a93f8654-cf59-4608-af3b-3638790c75ee" name="Changes" comment="Little better search">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/README" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/be54e6aa-4f3c-45de-a853-7ceb15a97e1d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/be54e6aa-4f3c-45de-a853-7ceb15a97e1d.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/be54e6aa-4f3c-45de-a853-7ceb15a97e1d/storage_v2/_src_/database/crosswordpuzzle_db.FSTa5Q/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/be54e6aa-4f3c-45de-a853-7ceb15a97e1d/storage_v2/_src_/database/crosswordpuzzle_db.FSTa5Q/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/mainframe/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/mainframe/Panel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/mainframe/ResultPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/mainframe/ResultPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/queries/SearchQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/queries/SearchQueries.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +221,8 @@
       <workItem from="1681909695152" duration="2530000" />
       <workItem from="1681914939832" duration="4053000" />
       <workItem from="1681920028060" duration="76000" />
-      <workItem from="1682076324181" duration="2715000" />
+      <workItem from="1682076324181" duration="3451000" />
+      <workItem from="1682273137219" duration="646000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1680078335044</created>
@@ -349,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681918989474</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Little better search">
+      <created>1682079244390</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1682079244390</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,6 +381,7 @@
     <MESSAGE value="Third unit tests" />
     <MESSAGE value="Unused inputs clear" />
     <MESSAGE value="Code commented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code commented" />
+    <MESSAGE value="Little better search" />
+    <option name="LAST_COMMIT_MESSAGE" value="Little better search" />
   </component>
 </project>

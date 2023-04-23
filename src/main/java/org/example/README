@@ -1,0 +1,20 @@
+SEARCH
+The interface of this program is kinda intuitive, in my opinion. You just enter your request, which is the legend in your crossword puzzle, and the number of letters, and if there are any results for your request in the database, they will show up quite visibly.
+It doesnt matter if there are any caps in your request or anywhere else; the program automatically transforms any user input into lowercase letters.
+The search, unfortunately, isnt especially clever. But sometimes only a portion of your request will do.
+
+ADD
+You can add your own records to the database. Either one by one or by using a CSV file.
+The file must follow a specific format. Each row must have three columns, all separated with a comma. The first column must contain the legend, the second the number of letters, and the third the word.
+The CSV file must not contain the column explanation as the first row. It doesnt take it into account, and thus wouldnt work.
+
+DELETE
+You can also delete records. It is rather easy. You just enter the key value pair of legend and word.
+
+ALTER
+You can update the records in the database simply by providing the current legend and word and the new legend and word. If the new legend or word is left blank, that value will remain unchanged.
+
+PROLOGUE
+This is it. It is not difficult. The interface is not exactly graphically appealing, but it gets the job done. Every time any of the user input is nonsense, the program will alert the user with a simple red label, telling him where the problem is.
+Everything was carefully tested.
+At the time of making this README, there is not a remote database implemented; I am just using a local one. Hopefully, that will be the subject of change, and I wont forget to write it here.
