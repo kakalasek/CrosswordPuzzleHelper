@@ -1,3 +1,6 @@
+RUN
+Simple, just start it, no special se up needed. However, if you are using a different computer, you might want to create a copy of the database that this program uses. SQL script for recreating the table is in a separate file called "script".
+
 SEARCH
 The interface of this program is kinda intuitive, in my opinion. You just enter your request, which is the legend in your crossword puzzle, and the number of letters, and if there are any results for your request in the database, they will show up quite visibly.
 It doesnt matter if there are any caps in your request or anywhere else; the program automatically transforms any user input into lowercase letters.
@@ -6,7 +9,7 @@ The search, unfortunately, isnt especially clever. But sometimes only a portion 
 ADD
 You can add your own records to the database. Either one by one or by using a CSV file.
 The file must follow a specific format. Each row must have three columns, all separated with a comma. The first column must contain the legend, the second the number of letters, and the third the word.
-The CSV file must not contain the column explanation as the first row. It doesnt take it into account, and thus wouldnt work.
+The CSV file must not contain the column explanation as the first row. It doesnt take it into account, and thus it wouldnt work.
 
 DELETE
 You can also delete records. It is rather easy. You just enter the key value pair of legend and word.

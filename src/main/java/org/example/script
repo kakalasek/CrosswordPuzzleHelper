@@ -1,0 +1,8 @@
+*Postgres database used*
+
+CREATE TABLE central (
+    legend VARCHAR(200),
+    number_of_letters VARCHAR(10),
+    word VARCHAR(200),
+    PRIMARY KEY(legend, word)
+);
