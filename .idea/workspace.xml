@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="CrosswordPuzzleHelper:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a93f8654-cf59-4608-af3b-3638790c75ee" name="Changes" comment="README added">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="a93f8654-cf59-4608-af3b-3638790c75ee" name="Changes" comment=".jar added">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/CrosswordPuzzleHelper_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/CrosswordPuzzleHelper_jar/CrosswordPuzzleHelper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/README" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/README" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +62,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
@@ -224,7 +230,8 @@
       <workItem from="1682273137219" duration="646000" />
       <workItem from="1682275408976" duration="199000" />
       <workItem from="1683007026537" duration="35000" />
-      <workItem from="1685522322129" duration="1158000" />
+      <workItem from="1685522322129" duration="1516000" />
+      <workItem from="1685569804357" duration="408000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1680078335044</created>
@@ -366,7 +373,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682275595229</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="README update">
+      <created>1685523831309</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1685523831309</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,6 +406,8 @@
     <MESSAGE value="Code commented" />
     <MESSAGE value="Little better search" />
     <MESSAGE value="README added" />
-    <option name="LAST_COMMIT_MESSAGE" value="README added" />
+    <MESSAGE value="README update" />
+    <MESSAGE value=".jar added" />
+    <option name="LAST_COMMIT_MESSAGE" value=".jar added" />
   </component>
 </project>
